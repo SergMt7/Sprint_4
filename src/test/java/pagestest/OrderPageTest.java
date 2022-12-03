@@ -1,6 +1,7 @@
-package PagesTest;
-import Pages.HomePage;
-import Pages.OrderPage;
+package pagestest;
+
+import pages.HomePage;
+import pages.OrderPage;
 import org.hamcrest.MatcherAssert;
 import static org.junit.Assert.assertEquals;
 import org.junit.After;
@@ -8,8 +9,6 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-
 import static org.hamcrest.CoreMatchers.startsWith;
 
 public class OrderPageTest {
@@ -46,7 +45,8 @@ public class OrderPageTest {
         orderPage.clickYesButton();
         String actualTextSuccessOrder = orderPage.getTextWindowSuccessfulOrder();
         MatcherAssert.assertThat("Статус заказа неверный", actualTextSuccessOrder, startsWith(expectedTextSuccessOrder));
- }
+    }
+
     @Test
     public void orderDown() {
         driver = new ChromeDriver();
@@ -58,6 +58,7 @@ public class OrderPageTest {
         assertEquals("Url по нижней кнопке заказа отличается", orderPage.siteOrder, orderPage.currentUrl);
 
     }
+
     @Test
     public void orderOther() {
         driver = new ChromeDriver();
@@ -81,6 +82,7 @@ public class OrderPageTest {
         String actualTextSuccessOrder = orderPage.getTextWindowSuccessfulOrder();
         MatcherAssert.assertThat("Статус заказа неверный", actualTextSuccessOrder, startsWith(expectedTextSuccessOrder));
     }
+
     @After
     public void tearDown() {
         driver.quit();

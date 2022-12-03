@@ -1,7 +1,6 @@
-package PagesTest;
+package pagestest;
 
-import Pages.HomePage;
-import org.openqa.selenium.By;
+import pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.junit.After;
@@ -20,8 +19,9 @@ public class ListQuestionsTest {
         homePage.openSite();
         homePage.scrollQuestions();
         homePage.clickButtonOneQuestion();
-        assertEquals(homePage.QuestionOneText, driver.findElement(By.id("accordion__panel-0")).getText()); //сравнить текст первого вопроса
+        assertEquals(homePage.questionOneText, homePage.getTextQuestionOne());//сравнить текст первого вопроса
     }
+
     @Test
     public void testQuestionTwo() {
         driver = new ChromeDriver();
@@ -30,8 +30,9 @@ public class ListQuestionsTest {
         homePage.openSite();
         homePage.scrollQuestions();
         homePage.clickButtonTwoQuestion();
-        assertEquals(homePage.QuestionTwoText, driver.findElement(By.id("accordion__panel-1")).getText()); //сравнить текст второго вопроса
+        assertEquals(homePage.questionTwoText, homePage.getTextQuestionTwo()); //сравнить текст второго вопроса
     }
+
     @Test
     public void testQuestionThree() {
         driver = new ChromeDriver();
@@ -40,8 +41,9 @@ public class ListQuestionsTest {
         homePage.openSite();
         homePage.scrollQuestions();
         homePage.clickButtonThreeQuestion();
-        assertEquals(homePage.QuestionThreeText, driver.findElement(By.id("accordion__panel-2")).getText()); //сравнить текст третьего вопроса
+        assertEquals(homePage.questionThreeText, homePage.getTextQuestionThree()); //сравнить текст третьего вопроса
     }
+
     @Test
     public void testQuestionFour() {
         driver = new ChromeDriver();
@@ -50,8 +52,9 @@ public class ListQuestionsTest {
         homePage.openSite();
         homePage.scrollQuestions();
         homePage.clickButtonFourQuestion();
-        assertEquals(homePage.QuestionFourText, driver.findElement(By.id("accordion__panel-3")).getText()); //сравнить текст четвертого вопроса
+        assertEquals(homePage.questionFourText, homePage.getTextQuestionFour()); //сравнить текст четвертого вопроса
     }
+
     @Test
     public void testQuestionFive() {
         driver = new ChromeDriver();
@@ -60,8 +63,9 @@ public class ListQuestionsTest {
         homePage.openSite();
         homePage.scrollQuestions();
         homePage.clickButtonFiveQuestion();
-        assertEquals(homePage.QuestionFiveText, driver.findElement(By.id("accordion__panel-4")).getText()); //сравнить текст пятого вопроса
+        assertEquals(homePage.questionFiveText, homePage.getTextQuestionFive()); //сравнить текст пятого вопроса
     }
+
     @Test
     public void testQuestionSix() {
         driver = new ChromeDriver();
@@ -70,8 +74,9 @@ public class ListQuestionsTest {
         homePage.openSite();
         homePage.scrollQuestions();
         homePage.clickButtonSixQuestion();
-        assertEquals(homePage.QuestionSixText, driver.findElement(By.id("accordion__panel-5")).getText()); //сравнить текст шестого вопроса
+        assertEquals(homePage.questionSixText, homePage.getTextQuestionSix()); //сравнить текст шестого вопроса
     }
+
     @Test
     public void testQuestionSeven() {
         driver = new ChromeDriver();
@@ -80,8 +85,9 @@ public class ListQuestionsTest {
         homePage.openSite();
         homePage.scrollQuestions();
         homePage.clickButtonSevenQuestion();
-        assertEquals(homePage.QuestionSevenText, driver.findElement(By.id("accordion__panel-6")).getText()); //сравнить текст седьмого вопроса
+        assertEquals(homePage.questionSevenText, homePage.getTextQuestionSeven()); //сравнить текст седьмого вопроса
     }
+
     @Test
     public void testQuestionEight() {
         driver = new ChromeDriver();
@@ -90,21 +96,11 @@ public class ListQuestionsTest {
         homePage.openSite();
         homePage.scrollQuestions();
         homePage.clickButtonEightQuestion();
-        assertEquals(homePage.QuestionEightText, driver.findElement(By.id("accordion__panel-7")).getText()); //сравнить текст восьмого вопроса
+        assertEquals(homePage.questionEightText, homePage.getTextQuestionEight()); //сравнить текст восьмого вопроса
     }
+
     @After
     public void teardown() {
         driver.quit();
     }
-
-
-
-
-
-
-
-
-
-
-
 }
