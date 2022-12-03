@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class OrderPage {
 
     private WebDriver driver;
-
     public OrderPage(WebDriver driver) {
         this.driver = driver;
 
@@ -39,70 +38,54 @@ public class OrderPage {
     public void fillName(String name){
         driver.findElement(nameOrder).sendKeys(name);
     }
-
     public void fillSurname(String surname){
         driver.findElement(surnameOrder).sendKeys(surname);
     }
-
     public void fillAddressOrder(String address) {
         driver.findElement(addressOrder).sendKeys(address);
     }
-
     public void fillStationOrder(By station) {   //метод заполнения станции
         driver.findElement(stationOrder).click();
         driver.findElement(station).click();
     }
-
     public void fillTelephoneOrder(String telephone) {   //метод заполнения телефона
         driver.findElement(telephoneOrder).sendKeys(telephone);
     }
-
     public void clickNextOrderButton() {    //метод нажатия на кнопку Далее
         driver.findElement(nextOrderButton).click();
     }
-
     public void setDate() { //метод заполнения сегодняшней даты
         driver.findElement(whenOrder).click();
         driver.findElement(dateOrder).click();
     }
-
     public void setDateOrderNextMonth() { //метод заполнения даты следующего месяца
         driver.findElement(whenOrder).click();
         driver.findElement(dateOrderNextMonth).click();
         driver.findElement(dateOrder).click();
     }
-
     public void setPeriod(By periodOrderDay) { //метод срока аренды
         driver.findElement(periodOrder).click();
         driver.findElement(periodOrderDay).click();
     }
-
     public void setScooterBlack(By colorScooterBlack) { //метод выбора цвета самоката
         driver.findElement(colorScooterBlack).click();
     }
-
     public void setScooterGrey(By colorScooterGrey) { //метод выбора цвета самоката
         driver.findElement(colorScooterGrey).click();
     }
-
     public void fillComment(String comment) { //метод записи комментария
         driver.findElement(commentOrder).sendKeys(comment);
     }
-
     public void clickYesButton() {  //метод клика по кнопке Да в заказе
         driver.findElement(yesButton).click();
     }
-
     public String getTextWindowSuccessfulOrder() { // метод возврата текста окна завершения заказа
         return driver.findElement(finishOrderWindow).getText();
     }
-
     public void clickDownOrderButton() {    //Нажатие на кнопку Заказать внизу
         driver.findElement(downOrderButton).click();
     }
-
     public String currentUrl() {    //Получение URL текущей страницы
         return driver.getCurrentUrl();
     }
-
 }

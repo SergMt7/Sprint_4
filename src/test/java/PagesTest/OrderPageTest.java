@@ -15,7 +15,6 @@ import static org.hamcrest.CoreMatchers.startsWith;
 public class OrderPageTest {
 
     private WebDriver driver;
-
     private String name = "Вася";
     private String surname = "Петров";
     private String address = "г. Москва, ул. Большая, д.1";
@@ -24,7 +23,6 @@ public class OrderPageTest {
     private String telephone = "+70001234567";
     private String comment = "Комментарий к доставке";
     private String expectedTextSuccessOrder = "Заказ успешно оформлен";
-
 
     @Test
     public void order() {
@@ -49,7 +47,6 @@ public class OrderPageTest {
         String actualTextSuccessOrder = orderPage.getTextWindowSuccessfulOrder();
         MatcherAssert.assertThat("Статус заказа неверный", actualTextSuccessOrder, startsWith(expectedTextSuccessOrder));
  }
-
     @Test
     public void orderDown() {
         driver = new ChromeDriver();
@@ -61,7 +58,6 @@ public class OrderPageTest {
         assertEquals("Url по нижней кнопке заказа отличается", orderPage.siteOrder, orderPage.currentUrl);
 
     }
-
     @Test
     public void orderOther() {
         driver = new ChromeDriver();
@@ -85,7 +81,6 @@ public class OrderPageTest {
         String actualTextSuccessOrder = orderPage.getTextWindowSuccessfulOrder();
         MatcherAssert.assertThat("Статус заказа неверный", actualTextSuccessOrder, startsWith(expectedTextSuccessOrder));
     }
-
     @After
     public void tearDown() {
         driver.quit();
